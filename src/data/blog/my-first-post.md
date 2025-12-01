@@ -4,8 +4,9 @@ author: Zhang Wenjin
 pubDatetime: 2025-12-01T10:36:05.569Z
 featured: false
 tags:
-  - FAQ
+  - test
 description: How to update project dependencies and AstroPaper template.
+slug: test
 ---
 
 # 这是一篇新博客
