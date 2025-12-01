@@ -11,9 +11,12 @@ import {
 import { transformerFileName } from "./src/utils/transformers/fileName";
 import { SITE } from "./src/config";
 
+const REPO_NAME = 'my-astro-blog';
+
 // https://astro.build/config
 export default defineConfig({
   site: SITE.website,
+  base: `/${REPO_NAME}/`,
   integrations: [
     sitemap({
       filter: page => SITE.showArchives || !page.endsWith("/archives"),
