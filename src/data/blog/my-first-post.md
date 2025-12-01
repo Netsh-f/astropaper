@@ -15,3 +15,4 @@ description: How to update project dependencies and AstroPaper template.
 ## 如何添加一篇新博客？
 
 在`src/data/blog`目录中添加`.md`文件。
+推送测试。
