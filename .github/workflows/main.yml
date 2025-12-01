@@ -1,0 +1,67 @@
+name: Deploy Astro Paper to GitHub Pages
+
+# 仅在推送到 master 分支时运行
+on:
+  push:
+    branches:
+      - master
+
+  # 允许手动从 Actions 选项卡运行此工作流
+  workflow_dispatch:
+
+# 设置权限
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 限制并发运行，以便新推送可以取消旧的运行
+concurrency:
+  group: 'pages'
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build site
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout your repository
+        uses: actions/checkout@v4
+      
+      # ⚠️ 关键步骤：设置 pnpm，确保使用正确的包管理器
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 8 
+          run_install: true # 运行 pnpm install
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm' # 使用 pnpm 缓存
+
+      - name: Build with Astro
+        run: pnpm run build
+        
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+        with:
+          # 配置工件路径为 Astro 的默认输出目录
+          static_site_generator: astro
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist' 
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
