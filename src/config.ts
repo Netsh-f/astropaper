@@ -1,9 +1,9 @@
 export const SITE = {
-  website: "https://blog.cheesechise.top/", // replace this with your deployed domain
-  author: "Sat Naing",
-  profile: "https://satnaing.dev/",
-  desc: "A minimal, responsive and SEO-friendly Astro blog theme.",
-  title: "AstroPaper",
+  website: "https://blog.cheesechise.top/",
+  author: "Zhang Wenjin",
+  profile: "https://blog.cheesechise.top/",
+  desc: "津的博客.",
+  title: "FerryBlog",
   ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,
   postPerIndex: 4,
@@ -14,7 +14,7 @@ export const SITE = {
   editPost: {
     enabled: true,
     text: "Edit page",
-    url: "https://github.com/satnaing/astro-paper/edit/main/",
+    url: "https://github.com/Netsh-f/astropaper/edit/master/",
   },
   dynamicOgImage: true,
   dir: "ltr", // "rtl" | "auto"
