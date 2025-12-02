@@ -1,7 +1,6 @@
 ---
 author: Zhang Wenjin
-pubDatetime: 2025-12-02T14:08:00.000Z
-modDatetime: 2025-12-02T14:08:00.000Z
+pubDatetime: 2025-12-02T06:00:00.000Z
 title: 如何编写AstroPaper博客
 tags:
   - docs

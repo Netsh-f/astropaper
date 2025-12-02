@@ -1,18 +1,13 @@
 ---
 author: Zhang Wenjin
-pubDatetime: 2024-09-08T20:58:52.737Z
-modDatetime: 2025-03-22T09:25:46.734Z
-title: MyTitle中文标题
+pubDatetime: 2025-12-02T06:00:00.000Z
+title: 欢迎来到我的博客
+featured: true
 tags:
-  - docs
-description: 中文描述.
+  - life
+description: 祝你生活顺利，内心自洽。
 ---
 
-# 这是一篇新博客
+# Hello World!
 
-> 使用了中文
-
-## 如何添加一篇新博客？
-
-在`src/data/blog`目录中添加`.md`文件。
-推送测试。
+你好，感谢你看我写的文字。
