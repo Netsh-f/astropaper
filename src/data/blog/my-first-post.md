@@ -1,7 +1,7 @@
 ---
 author: Zhang Wenjin
 pubDatetime: 2025-12-02T06:00:00.000Z
-title: 欢迎来到我的博客
+title: 欢迎来到津的博客
 featured: true
 tags:
   - life
