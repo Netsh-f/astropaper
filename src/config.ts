@@ -3,7 +3,7 @@ export const SITE = {
   author: "Zhang Wenjin",
   profile: "https://blog.cheesechise.top/",
   desc: "津的博客.",
-  title: "FerryBlog",
+  title: "Jin",
   ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,
   postPerIndex: 4,
