@@ -23,7 +23,7 @@ timezone: Asia/Shanghai
 
 一个包含了所有字段的样例：
 
-```
+```yaml file="src/data/blog/example-post.md"
 ---
 title: 文章的标题
 description: 这是示例文章的示例描述。
@@ -66,7 +66,8 @@ timezone: Asia/Shanghai
 ## 添加目录
 
 在你想加目录的地方，填写二级标题
-```
+
+```md
 ## Table of contents
 ```
 
@@ -78,7 +79,7 @@ timezone: Asia/Shanghai
 
 `/src/assets/images/example.jpg`两种引用方式：
 
-```
+```md
 ![something](@/assets/images/example.jpg)
 ![something](../../assets/images/example.jpg)
 ```
@@ -89,7 +90,7 @@ timezone: Asia/Shanghai
 
 `/public/assets/images/example.jpg`两种引用方式：
 
-```
+```md
 ![something](/assets/images/example.jpg)
 <img src="/assets/images/example.jpg" alt="something">
 ```
