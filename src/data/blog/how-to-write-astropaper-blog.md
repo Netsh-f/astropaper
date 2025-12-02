@@ -85,7 +85,7 @@ timezone: Asia/Shanghai
 
 ### 方法2：放在`public/`目录中
 
-放在这里的图片不会被优化，你应该自行使用[TinyPng](https://tinypng.com/)或[TinyJpg](https://tinyjpg.com/)等网站进行优化，否则会影响网站整体性能。
+放在这里的图片不会被优化，你应该自行使用 [TinyPng](https://tinypng.com/) 或 [TinyJpg](https://tinyjpg.com/) 等网站进行优化，否则会影响网站整体性能。
 
 `/public/assets/images/example.jpg`两种引用方式：
 
