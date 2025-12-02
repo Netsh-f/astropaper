@@ -4,7 +4,7 @@ pubDatetime: 2025-12-02T06:00:00.000Z
 title: 如何编写AstroPaper博客
 tags:
   - docs
-description: 如何添加前言、上传图片等
+description: 如何添加文章信息、引用图片等
 hideEditPost: true
 timezone: Asia/Shanghai
 ---
