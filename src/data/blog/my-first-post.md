@@ -1,12 +1,11 @@
 ---
-title: 添加新博客教程
 author: Zhang Wenjin
-pubDatetime: 2025-12-01T10:36:05.569Z
-featured: false
+pubDatetime: 2024-09-08T20:58:52.737Z
+modDatetime: 2025-03-22T09:25:46.734Z
+title: MyTitle中文标题
 tags:
-  - test
-description: How to update project dependencies and AstroPaper template.
-slug: test
+  - docs
+description: 中文描述.
 ---
 
 # 这是一篇新博客
