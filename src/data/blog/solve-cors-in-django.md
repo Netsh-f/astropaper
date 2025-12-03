@@ -1,6 +1,6 @@
 ---
 author: Zhang Wenjin
-pubDatetime: 2025-12-02T06:00:00.000Z
+pubDatetime: 2025-12-03T06:00:00.000Z
 title: 解决Django后端中的CORS跨域问题
 tags:
   - docs
