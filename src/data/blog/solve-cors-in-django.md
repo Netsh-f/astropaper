@@ -4,7 +4,8 @@ pubDatetime: 2025-12-03T06:00:00.000Z
 title: 解决Django后端中的CORS跨域问题
 tags:
   - docs
-  - Django
+  - django
+  - tutorial
 description: 出现在前后端分离的纯后端Django项目中，通过添加中间件、修改配置等方式解决
 draft: false
 hideEditPost: true

@@ -5,6 +5,7 @@ title: 摩托车入门——如何考取摩托车驾驶证
 tags:
   - life
   - moto
+  - tutorial
 description: 关于考取摩托车驾照的一些经验
 draft: false
 hideEditPost: true
