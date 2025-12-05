@@ -5,6 +5,7 @@ title: osu!音游入门
 tags:
   - life
   - game
+  - tutorial
 description: 介绍osu!游戏安装、账号、谱面、手法等入门知识
 draft: false
 hideEditPost: true
