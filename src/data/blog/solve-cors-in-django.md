@@ -6,7 +6,7 @@ tags:
   - docs
   - django
   - tutorial
-description: 出现在前后端分离的纯后端Django项目中，通过添加中间件、修改配置等方式解决
+description: 通过添加中间件、修改配置等方式解决CORS问题
 draft: false
 hideEditPost: true
 timezone: Asia/Shanghai
