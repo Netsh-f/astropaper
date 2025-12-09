@@ -5,7 +5,7 @@ title: 欢迎来到津的博客
 featured: true
 tags:
   - life
-description: 祝你生活顺利，内心自洽。
+description: 祝你生活愉快。
 ---
 
 # Hello World!
