@@ -23,3 +23,9 @@ os.environ['HF_TOKEN'] = "hf_Your_token"
 其中，token从[这里](https://huggingface.co/settings/tokens)获取
 
 当然你也可以直接在系统环境变量中设置
+
+```bash
+export HF_ENDPOINT="https://hf-mirror.com"
+export HF_HUB_ENABLE_HF_MIRROR="1"
+export HF_TOKEN="hf_xxxYourRealTokenHere"
+```
