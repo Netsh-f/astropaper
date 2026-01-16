@@ -90,3 +90,29 @@ unzip archive.zip -d directory
 ```bash
 unzip -l archive.zip
 ```
+
+## 7z
+
+linux 安装 7z
+
+```bash
+apt install p7zip-full
+```
+
+解压
+
+```bash
+7z x archive.7z.001
+```
+
+普通压缩
+
+```bash
+7z a archive.7z myfolder/
+```
+
+分卷压缩
+
+```bash
+7z a -v450m archive.7z myfolder/
+```
