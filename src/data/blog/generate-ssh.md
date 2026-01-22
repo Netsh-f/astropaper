@@ -1,7 +1,7 @@
 ---
 author: Zhang Wenjin
 pubDatetime: 2024-04-18T06:00:00.000Z
-title: 生成ssh公钥并添加到Github
+title: 生成ssh公钥并添加到Github/远程服务器
 tags:
     - tutorial
     - docs
@@ -11,7 +11,7 @@ hideEditPost: false
 timezone: Asia/Shanghai
 ---
 
-## 正文
+## 生成公钥
 
 首先在你的开发机器上（以windows系统为例），在任意地方打开git bash，执行命令
 
@@ -33,8 +33,20 @@ ssh-keygen -t rsa -C "youremail@xxx.com"
 ssh-rsa AAAxxxxxxxxxxxxxxxxxxxx= youremail@xxx.com
 ```
 
+## 添加到Github
+
 进入github点击右上角你的头像进入设置（settings）
 
 左侧进入`SSH and GPG keys`标签页，点击`New SSH key`把刚刚生成的公钥复制进去并确认
 
 之后你就可以使用ssh的方式访问远端仓库了
+
+## 添加到远程服务器
+
+将公钥添加到
+
+```bash src="~/.ssh/authorized_keys"
+ssh-rsa AAAxxxxxxxxxxxxxxxxxxxx= youremail@xxx.com
+```
+
+这样在使用ssh连接的时候就不需要每次都输入密码了
