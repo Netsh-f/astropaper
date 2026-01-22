@@ -79,6 +79,8 @@ uv sync
 
 ## 换源
 
+### 安装 Python 换源
+
 uv 默认从 github 下载预编译的 python 二进制，所以创建虚拟环境的时候可能会卡住，需要换源
 
 ```bash
@@ -94,3 +96,9 @@ export UV_PYTHON_DOWNLOADS_URL=https://mirrors.tuna.tsinghua.edu.cn/github-relea
 > 试了试下清华源，不咋快
 
 参考[知乎-用uv管理python环境(各种应用场景)-VCVC](https://zhuanlan.zhihu.com/p/1908630076704159010)
+
+### PyPI 换源
+
+```bash
+export UV_INDEX_URL=https://pypi.tuna.tsinghua.edu.cn/simple
+```
