@@ -215,7 +215,7 @@ def validate_request(serializer_class):
     return decorator
 ```
 
-这个自己写的装饰器可以快速使用上面的序列化器，并且把不管是POST合适GET的参数都存放到data参数中，方面使用
+这个自己写的装饰器可以快速使用上面的序列化器，并且把不管是POST还是GET的参数都存放到data参数中，方面使用
 
 ### 返回数据封装
 
@@ -282,7 +282,7 @@ urlpatterns = [
 登录接口编写
 
 ```python file="account/views.py"
-from django.contrib.auth import login
+from django.contrib.auth import login, authenticate
 
 @api_view(['POST'])
 @validate_request(LoginSerializer)
@@ -340,7 +340,7 @@ def logout_view(request):
     return response_util(ErrorCode.SUCCESS)
 ```
 
-我知道 Django 有一个自带的登录校验装饰器`@login_required`，但是适合在前后端不分离项目中使用，它会强制重定向到登录页面，在前后端分离项目中并不合适。
+我知道 Django 有一个自带的登录校验装饰器`@login_required`，但是它适合在前后端不分离项目中使用。它会强制重定向到登录页面，不能自定义返回内容，在前后端分离项目中并不合适。
 
 ## TODO
 
