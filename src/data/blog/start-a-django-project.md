@@ -1,6 +1,6 @@
 ---
 author: Zhang Wenjin
-pubDatetime: 2026-15-37T06:00:00.000Z
+pubDatetime: 2026-01-29T06:00:00.000Z
 title: Django 项目 Quick Start
 tags:
     - docs
@@ -66,6 +66,7 @@ python manage.py check
 
 > 这个命令会检查整个项目的配置，包括数据库连接等。如果一切正常，它会显示`System check identified no issues (0 silenced).`
 
+> 即使一切正常，也别着急执行 python manage.py migrate，后面会说。
 
 > mysqlclient 是官方推荐的驱动，底层是C语言，效率较高，但是需要安装C依赖；如果遇到困难，可以使用`PyMySQL`驱动，它是纯Python实现的，能确保成功。
 
