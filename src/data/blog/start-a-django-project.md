@@ -16,7 +16,7 @@ timezone: Asia/Shanghai
 
 ## 修改时区与语言
 
-```python src="projectname/settings.py"
+```python file="projectname/settings.py"
 LANGUAGE_CODE = "zh-hans"
 TIME_ZONE = "Asia/Shanghai"
 ```
@@ -27,7 +27,7 @@ TIME_ZONE = "Asia/Shanghai"
 
 为项目写一个配置文件`config.yaml`
 
-```yaml src="config.yaml"
+```yaml file="config.yaml"
 DATABASE:
   ENGINE: django.db.backends.mysql
   USER: username
@@ -41,7 +41,7 @@ DATABASE:
 
 在 `settings.py` 中引入配置文件
 
-```python src="projectname/settings.py"
+```python file="projectname/settings.py"
 import yaml
 
 with open("config.yaml", 'r') as f:
@@ -64,9 +64,9 @@ uv add mysqlclient
 python manage.py check
 ```
 
-> 这个命令会检查整个项目的配置，包括数据库连接等。如果一切正常，它会显示`System check identified no issues (0 silenced).`
+这个命令会检查整个项目的配置，包括数据库连接等。如果一切正常，它会显示`System check identified no issues (0 silenced).`
 
-> 即使一切正常，也别着急执行 python manage.py migrate，后面会说。
+即使一切正常，也别着急执行 python manage.py migrate，后面会说。
 
 > mysqlclient 是官方推荐的驱动，底层是C语言，效率较高，但是需要安装C依赖；如果遇到困难，可以使用`PyMySQL`驱动，它是纯Python实现的，能确保成功。
 
@@ -78,7 +78,7 @@ uv add pymysql
 
 然后添加代码
 
-```python src="projectname/__init__.py"
+```python file="projectname/__init__.py"
 import pymysql
 
 pymysql.version_info = (1, 4, 3, "final", 0)

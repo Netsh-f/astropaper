@@ -47,7 +47,7 @@ uv sync
 
 首先修改`pyproject.toml`，以`cu118`为例
 
-```toml src="pyproject.toml"
+```toml file="pyproject.toml"
 [project]
 name = "project"
 version = "0.1.0"

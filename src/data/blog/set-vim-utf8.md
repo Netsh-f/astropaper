@@ -16,7 +16,7 @@ timezone: Asia/Shanghai
 
 编辑`~/.vimrc`文件（如果没有则自行创建），添加如下内容
 
-```bash src="~/.vimrc"
+```bash file="~/.vimrc"
 set encoding=utf-8
 set fileencodings=utf-8,gbk,latin1
 set termencoding=utf-8

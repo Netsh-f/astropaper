@@ -29,7 +29,7 @@ ssh-keygen -t rsa -C "youremail@xxx.com"
 
 复制`id_rsa.pub`文件的文本内容，一般形如
 
-```src="id_rsa.pub"
+```file="id_rsa.pub"
 ssh-rsa AAAxxxxxxxxxxxxxxxxxxxx= youremail@xxx.com
 ```
 
@@ -45,7 +45,7 @@ ssh-rsa AAAxxxxxxxxxxxxxxxxxxxx= youremail@xxx.com
 
 将公钥添加到
 
-```bash src="~/.ssh/authorized_keys"
+```bash file="~/.ssh/authorized_keys"
 ssh-rsa AAAxxxxxxxxxxxxxxxxxxxx= youremail@xxx.com
 ```
 
