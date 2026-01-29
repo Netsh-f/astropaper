@@ -19,7 +19,21 @@ conda似乎已经被嫌弃了，合作的企业都开始用uv了，我也应该�
 
 ## 基本使用
 
-创建虚拟环境，需要在项目根目录下执行，它会创建一个`.venv`
+在一个没有使用 uv 的目录中，初始化（生成`pyproject.toml`）
+
+```bash
+uv init
+```
+
+然后可以编辑`pyproject.toml`，在里面添加依赖，最后执行
+
+```bash
+uv sync
+```
+
+它会自动创建一个虚拟环境，然后同步依赖
+
+如果你想要手动创建一个虚拟环境，需要在项目根目录下执行，它会创建一个`.venv`
 
 ```bash
 uv venv --python 3.10.19
@@ -36,6 +50,17 @@ source .venv/bin/activate
 ```bash
 uv sync
 ```
+
+## 切换虚拟环境的 python 版本
+
+比如说你现在想要 3.10 版本，不管你现在是什么版本，执行
+
+```bash
+uv python pin 3.10
+uv sync --reinstall
+```
+
+它会帮你切换到 3.10，然后重新安装依赖
 
 ## 安装 GPU 版本的 PyTorch
 
@@ -101,4 +126,16 @@ export UV_PYTHON_DOWNLOADS_URL=https://mirrors.tuna.tsinghua.edu.cn/github-relea
 
 ```bash
 export UV_INDEX_URL=https://pypi.tuna.tsinghua.edu.cn/simple
+```
+
+powershell
+
+```
+$env:UV_INDEX_URL = "https://pypi.tuna.tsinghua.edu.cn/simple"
+```
+
+cmd
+
+```
+set UV_INDEX_URL=https://pypi.tuna.tsinghua.edu.cn/simple
 ```
