@@ -277,7 +277,70 @@ urlpatterns = [
 
 这样，就可以请求`http://127.0.0.1:8000/account/register/`
 
-### 
+## 关于登录
+
+登录接口编写
+
+```python file="account/views.py"
+from django.contrib.auth import login
+
+@api_view(['POST'])
+@validate_request(LoginSerializer)
+def login_view(request, data):
+    user = authenticate(**data)
+    if user is None:
+        return response_util(ErrorCode.PASSWORD_ERROR)
+    login(request, user)
+    return response_util(ErrorCode.SUCCESS, UserSerializer(user).data)
+```
+
+这里用到了返回数据的序列化`UserSerializer`，这个也是自己写的，用来将model的数据转换成字典，方便返回。这个序列化器很强大，可以自定义一些需要计算的字段，可以排除某些字段等等。
+
+```python file="account/serializer.py"
+from rest_framework.serializers import ModelSerializer
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
+
+
+class UserSerializer(ModelSerializer):
+    class Meta:
+        model = User
+        fields = ["id", "username"]
+```
+
+这个登录接口被调用后，会在`Response Cookie`中存储一个名为`csrftoken`的字段，这个字段是Django自带的一个CSRF防护机制，同时也是用户的token。
+
+前端应该将其存储起来，调用其他需要登录的接口的时候，就需要将它放在请求头中，字段名为`X-CSRFToken`。
+
+如果你在使用 Apifox 或者 Postman 这些工具测试接口，你应该给登录这个接口添加一个提取变量的后置操作，将`csrftoken`提取到环境变量中，然后设置一个全局参数，在请求头中添加`X-CSRFToken: {{csrftoken}}`。
+
+如果你想强制清除登录状态，你可以清空 Cookie。
+
+如果你要在其他接口校验当前请求的用户有没有登录，我写了如下修饰器
+
+```python file="utils/decorators.py"
+def login_required(view_func):
+    @wraps(view_func)
+    def wrapper(request, *args, **kwargs):
+        if not request.user.is_authenticated:
+            return response_util(ErrorCode.NOT_LOGGED_IN)
+        return view_func(request, *args, **kwargs)
+
+    return wrapper
+```
+
+把它放在需要登录的接口上，比如这个登出接口
+
+```python file="account/views.py"
+@api_view(['GET'])
+@login_required
+def logout_view(request):
+    logout(request)
+    return response_util(ErrorCode.SUCCESS)
+```
+
+我知道 Django 有一个自带的登录校验装饰器`@login_required`，但是适合在前后端不分离项目中使用，它会强制重定向到登录页面，在前后端分离项目中并不合适。
 
 ## TODO
 
