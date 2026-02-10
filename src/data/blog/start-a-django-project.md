@@ -342,6 +342,34 @@ def logout_view(request):
 
 我知道 Django 有一个自带的登录校验装饰器`@login_required`，但是它适合在前后端不分离项目中使用。它会强制重定向到登录页面，不能自定义返回内容，在前后端分离项目中并不合适。
 
+## 配置 daphne
+
+Daphne 是一个 ASGI 服务器，用于运行 Django 项目。它可以处理 WebSocket 连接，而 Django 自带的开发服务器不能。
+
+安装依赖
+
+```bash
+uv add daphne
+```
+
+添加项目配置
+
+```python file="projectname/settings.py"
+INSTALLED_APPS = [
+    "daphne",  # 添加这一行
+    "django.contrib.admin",
+    ...
+]
+
+ASGI_APPLICATION = "ProjectName.asgi.application"  # 再添加这一行
+```
+
+使用 daphne 启动项目命令
+
+```bash
+uv run daphne PaperInsight.asgi:application -b 0.0.0.0 -p 9300
+```
+
 ## TODO
 
 Model各种类型字段，序列化，序列化器内置函数，级联序列化，异步定时任务，文件系统，生产环境部署运维……
