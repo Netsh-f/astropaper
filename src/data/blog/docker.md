@@ -153,7 +153,9 @@ PULL镜像
 docker pull <私有仓库地址>/projectname/imagename:tag
 ```
 
-## 给docker本身设置代理
+## 设置代理
+
+### 给 docker 本身设置代理
 
 对于Windows上的Docker Desktop可以打开Docker Desktop->Settings->Docker Engine或者在C:\Users\username\.docker\daemon.json中修改配置文件，添加下文"proxies"一项
 
@@ -206,3 +208,55 @@ sudo systemctl restart docker
   }
 }
 ```
+
+### 运行一个容器时设置代理
+
+```bash
+docker run -r http_proxy=http://xxx.xxx.xxx.xxx:7890 https_proxy=https://xxx.xxx.xxx.xxx:7890 <image_name>
+```
+
+如果代理服务器在你的宿主机上，你可能需要查询主机ip
+
+查询主机ip相关命令如下，三者都可
+```bash
+ping host.docker.internal
+echo $DOCKER_HOST
+grep docker /etc/hosts
+```
+
+下载`ping`工具命令
+```bash
+apt install iputils-ping
+```
+
+## 复制一个文件到一个容器内部
+
+```bash
+docker cp /path/to/local/file.txt my_container:/path/in/container
+```
+
+## docker容器使用宿主机的cuda
+
+```bash
+docker run --gpus=all <image_name>
+```
+
+如果你想测试一下容器能否使用宿主机的cuda，这里有一个测试命令
+```bash
+docker run --rm -it --gpus=all nvcr.io/nvidia/k8s/cuda-sample:nbody nbody -gpu -benchmark
+```
+
+详细内容请查看[官方文档](https://docs.docker.com/desktop/features/gpu/)
+
+## 编写Dockerfile中的COPY时，排除某些文件
+
+在同级目录写一个.dockerignore内容如下
+```
+media/
+```
+
+## 相关链接
+
+本博客参考了[北京航空航天大学《云计算技术基础》课程实验手册](https://scs.buaa.edu.cn/doc/cloud-labs/cloud/container_docker/)
+
+为 Docker Hub 配置国内镜像[教程](https://yeasy.gitbook.io/docker_practice/di-yi-bu-fen-ru-men-pian/03_install/3.9_mirror)
