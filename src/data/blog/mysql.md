@@ -28,6 +28,18 @@ sudo mysql_secure_installation
 
 这个命令会引导你设置安全配置，新版 mysql 在本机使用 root 权限登录的时候，会使用 auth_socket 插件进行身份认证，登陆到 mysql root 账户不需要密码，所以不用设置 root 密码
 
+## 修改 MySQL 配置
+
+```cnf file="/etc/mysql/mysql.conf.d/mysqld.cnf"
+bind-address = 0.0.0.0
+```
+
+重启服务
+
+```bash
+sudo systemctl restart mysql
+```
+
 ## 创建一个新用户
 
 ```bash
