@@ -7,6 +7,7 @@ tags:
 description: uv 安装、使用、cuda torch安装、换源等
 draft: False
 timezone: Asia/Shanghai
+featured: true
 ---
 
 ## 前言
