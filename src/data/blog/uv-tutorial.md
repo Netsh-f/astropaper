@@ -75,18 +75,26 @@ uv sync --reinstall
 
 ```toml file="pyproject.toml"
 [project]
-name = "project"
+name = "projectname"
 version = "0.1.0"
-requires-python = ">=3.14"
+description = "description"
+readme = "README.md"
+requires-python = ">=3.12"
 dependencies = [
-  "torch>=2.9.1",
-  "torchvision>=0.24.1",
+    "torch",
+    "torchvision",
+    "torchaudio",
 ]
 
 [[tool.uv.index]]
-name = "pytorch-cu118"
-url = "https://download.pytorch.org/whl/cu118"
+name = "pytorch-cu126"
+url = "https://download.pytorch.org/whl/cu126"
 explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu126" }
+torchvision = { index = "pytorch-cu126" }
+torchaudio = { index = "pytorch-cu126" }
 ```
 
 然后执行
