@@ -28,6 +28,95 @@ tar zxvf harbor-offline-installer-v2.15.0.tgz
 
 如果不搞证书，就要在连接harbor的时候，将ip加入`/etc/docker/daemon.json`的`-insecure-registry`
 
+建议先跳过次步骤，直接使用HTTP
+
+安装`certbot`
+```bash
+sudo apt update
+sudo apt install certbot -y
+```
+
+申请证书
+```bash
+sudo certbot certonly --standalone -d harbor.cheesechise.top
+```
+执行此步骤要确保80端口没有被占用，输入邮箱并同意服务条款
+
+将生成的证书配置给Harbor
+
+```yml file="harbor.yml"
+https:
+  port: 443
+  # 使用 Let's Encrypt 的全链证书
+  certificate: /etc/letsencrypt/live/harbor.cheesechise.top/fullchain.pem
+  # 使用 Let's Encrypt 的私钥
+  private_key: /etc/letsencrypt/live/harbor.cheesechise.top/privkey.pem
+```
+
+### 执行安装脚本
+
+在解压目录
+```bash
+sudo ./prepare
+sudo ./install.sh
+```
+
+## nginx 端口转发
+
+```bash
+sudo apt update
+sudo apt install nginx -y
+sudo systemctl status nginx
+sudo vim /etc/nginx/sites-available/harbor.conf
+```
+
+填入如下配置
+
+```conf file="harbor.conf"
+server {
+    listen 80;
+    server_name harbor.cheesechise.top;
+    # 将 HTTP 自动跳转到 HTTPS
+    return 301 https://$host$request_uri;
+}
+
+server {
+    listen 443 ssl;
+    server_name harbor.cheesechise.top;
+
+    # 指向你刚刚申请成功的 Certbot 证书
+    ssl_certificate /etc/letsencrypt/live/harbor.cheesechise.top/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/harbor.cheesechise.top/privkey.pem;
+
+    # 必须加上这一行，否则推送镜像时会报 413 错误（上传文件太大）
+    client_max_body_size 0;
+
+    location / {
+        # 转发到你的 Harbor 实际运行端口
+        proxy_pass https://127.0.0.1:9181;
+        
+        # 保持连接的必要请求头
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+
+        # 禁用缓存以支持 Docker 推送大文件流
+        proxy_buffering off;
+        proxy_request_buffering off;
+    }
+}
+```
+
+激活配置
+```bash
+sudo ln -s /etc/nginx/sites-available/harbor.conf /etc/nginx/sites-enabled/
+sudo nginx -t
+sudo systemctl restart nginx
+```
+
+## 自己生成证书（不要使用此方法，很麻烦）
+
 生成CA证书，替换`harbor.cheesechise.top`为实际域名
 ```bash
 mkdir -p /data/cert && cd /data/cert
@@ -74,9 +163,13 @@ openssl x509 -req -sha256 -days 3650 \
 cp harbor.yml.tmpl harbor.yml
 vim harbor.yml
 ```
-修改
+修改，可以修改端口号
 ```yml file="harbor.yml"
 hostname: harbor.cheesechise.top
+
+http:
+  # port for http, default is 80. If https enabled, this port will redirect to https port
+  port: 80
 
 https:
   port: 443
@@ -94,16 +187,6 @@ sudo cp /data/cert/ca.crt /etc/docker/certs.d/harbor.cheesechise.top/
 
 sudo systemctl restart docker
 ```
-
-### 执行安装脚本
-
-在解压目录
-```bash
-sudo ./prepare
-sudo ./install.sh
-```
-
-### 其它
 
 记得打开服务器`443`HTTPS端口
 
