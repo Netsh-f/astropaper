@@ -3,8 +3,9 @@ author: Zhang Wenjin
 pubDatetime: 2026-03-08T06:00:00.000Z
 title: 如何搭建 MinIO 服务
 tags:
-    - docs
-    - tutorial
+  - minio
+  - object-storage
+  - docker
 description: 使用 Docker 部署的命令
 draft: false
 hideEditPost: false

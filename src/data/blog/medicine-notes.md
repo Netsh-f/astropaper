@@ -3,8 +3,9 @@ author: Zhang Wenjin
 pubDatetime: 2024-11-16T06:00:00.000Z
 title: 常用药品记录
 tags:
-  - life
   - health
+  - medication
+  - notes
 description: 一些亲测好用的药物
 draft: false
 timezone: Asia/Shanghai

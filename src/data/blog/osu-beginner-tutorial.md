@@ -3,9 +3,9 @@ author: Zhang Wenjin
 pubDatetime: 2024-04-09T06:00:00.000Z
 title: osu!音游入门
 tags:
-  - life
-  - game
-  - tutorial
+  - osu
+  - rhythm-game
+  - gaming
 description: 介绍osu!游戏安装、账号、谱面、手法等入门知识
 draft: false
 hideEditPost: true

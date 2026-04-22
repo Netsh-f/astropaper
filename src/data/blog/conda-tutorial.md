@@ -3,8 +3,9 @@ author: Zhang Wenjin
 pubDatetime: 2023-05-20T06:00:00.000Z
 title: Conda快速入门教程
 tags:
-    - docs
-    - tutorial
+  - conda
+  - python
+  - environment
 description: 安装方法与常用命令
 draft: false
 hideEditPost: false

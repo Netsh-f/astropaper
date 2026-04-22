@@ -3,7 +3,9 @@ author: Zhang Wenjin
 pubDatetime: 2026-01-23T06:00:00.000Z
 title: FastAPI 学习笔记
 tags:
-    - docs
+  - fastapi
+  - python
+  - backend
 description: 学习搭建一个 FastAPI 项目
 draft: False
 timezone: Asia/Shanghai

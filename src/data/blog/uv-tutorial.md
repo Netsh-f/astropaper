@@ -3,7 +3,9 @@ author: Zhang Wenjin
 pubDatetime: 2026-01-22T06:00:00.000Z
 title: uv 使用教程
 tags:
-    - docs
+  - python
+  - uv
+  - package-management
 description: uv 安装、使用、cuda torch安装、换源等
 draft: False
 timezone: Asia/Shanghai

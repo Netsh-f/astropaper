@@ -4,7 +4,8 @@ pubDatetime: 2025-12-02T06:00:00.000Z
 title: 欢迎来到津的博客
 featured: true
 tags:
-  - life
+  - intro
+  - blog
 description: 祝你生活愉快。
 ---
 

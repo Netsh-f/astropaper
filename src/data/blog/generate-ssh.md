@@ -3,8 +3,9 @@ author: Zhang Wenjin
 pubDatetime: 2024-04-18T06:00:00.000Z
 title: 生成ssh公钥并添加到Github/远程服务器
 tags:
-    - tutorial
-    - docs
+  - ssh
+  - git
+  - server
 description: ssh-keygen命令生成ssh公钥
 draft: false
 hideEditPost: false

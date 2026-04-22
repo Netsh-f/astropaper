@@ -3,8 +3,9 @@ author: Zhang Wenjin
 pubDatetime: 2026-03-02T06:00:00.000Z
 title: Redis 安装与配置
 tags:
-    - docs
-    - tutorial
+  - redis
+  - database
+  - linux
 description: windows / linux 下安装与基本配置
 draft: false
 hideEditPost: false

@@ -3,8 +3,9 @@ author: Zhang Wenjin
 pubDatetime: 2026-03-23T06:00:00.000Z
 title: prompt 生成器
 tags:
-    - docs
-    - tutorial
+  - ai
+  - prompt-engineering
+  - workflow
 description: 生成prompt的prompt
 draft: false
 hideEditPost: false

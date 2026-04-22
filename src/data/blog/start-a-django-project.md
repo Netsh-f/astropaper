@@ -3,8 +3,9 @@ author: Zhang Wenjin
 pubDatetime: 2026-01-29T06:00:00.000Z
 title: Django 项目启动指南
 tags:
-    - docs
-    - django
+  - django
+  - python
+  - backend
 description: 从 0 搭建一个 Django 后端项目
 draft: False
 timezone: Asia/Shanghai

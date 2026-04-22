@@ -3,9 +3,9 @@ author: Zhang Wenjin
 pubDatetime: 2026-01-15T02:00:00.000Z
 title: 设置Vim默认使用UTF-8解决乱码
 tags:
-    - tutorial
-    - docs
-    - linux
+  - vim
+  - encoding
+  - linux
 description: 修改.vimrc
 draft: false
 hideEditPost: false

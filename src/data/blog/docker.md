@@ -3,8 +3,9 @@ author: Zhang Wenjin
 pubDatetime: 2024-03-31T06:00:00.000Z
 title: Docker 安装及使用
 tags:
-    - docs
-    - tutorial
+  - docker
+  - container
+  - linux
 description: 安装、配置、使用命令
 draft: false
 hideEditPost: false

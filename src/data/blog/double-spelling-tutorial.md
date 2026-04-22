@@ -3,8 +3,9 @@ author: Zhang Wenjin
 pubDatetime: 2024-04-09T06:00:00.000Z
 title: 提升打字速度——双拼入门
 tags:
-    - life
-    - tutorial
+  - typing
+  - input-method
+  - productivity
 description: 简单的双拼入门介绍
 draft: false
 timezone: Asia/Shanghai

@@ -4,8 +4,8 @@ pubDatetime: 2025-12-03T06:00:00.000Z
 title: 如何通过Django后端CSRF校验
 tags:
   - django
-  - docs
-  - tutorial
+  - csrf
+  - backend
 description: 如何获取、传入csrf-token，指定前端部署地址
 draft: false
 hideEditPost: true

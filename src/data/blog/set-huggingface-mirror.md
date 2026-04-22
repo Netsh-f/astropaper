@@ -3,8 +3,9 @@ author: Zhang Wenjin
 pubDatetime: 2025-09-29T06:00:00.000Z
 title: 如何设置Huggingface镜像
 tags:
-    - docs
-    - tutorial
+  - huggingface
+  - python
+  - mirror
 description: 添加镜像与token环境变量的方法
 draft: false
 hideEditPost: false

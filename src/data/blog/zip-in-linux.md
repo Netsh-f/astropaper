@@ -3,8 +3,9 @@ author: Zhang Wenjin
 pubDatetime: 2024-07-18T06:00:00.000Z
 title: Linux系统下压缩相关命令
 tags:
-    - docs
-    - linux
+  - linux
+  - compression
+  - cli
 description: tar, tar.gz, zip等压缩格式的解压缩命令
 draft: False
 timezone: Asia/Shanghai

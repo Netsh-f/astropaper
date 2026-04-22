@@ -3,8 +3,9 @@ author: Zhang Wenjin
 pubDatetime: 2026-02-10T06:00:00.000Z
 title: 调酒学习笔记
 tags:
-    - mixology
-    - tutorial
+  - mixology
+  - cocktails
+  - recipes
 description: 基本器具，调酒配方
 draft: false
 hideEditPost: false

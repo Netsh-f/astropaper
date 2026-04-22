@@ -3,8 +3,9 @@ author: Zhang Wenjin
 pubDatetime: 2026-03-02T06:00:00.000Z
 title: MySQL 安装与配置
 tags:
-    - docs
-    - tutorial
+  - mysql
+  - database
+  - linux
 description: linux 下安装与基本配置
 draft: false
 hideEditPost: false

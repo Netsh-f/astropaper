@@ -3,9 +3,9 @@ author: Zhang Wenjin
 pubDatetime: 2025-12-03T06:00:00.000Z
 title: 解决Django后端中的CORS跨域问题
 tags:
-  - docs
   - django
-  - tutorial
+  - cors
+  - backend
 description: 通过添加中间件、修改配置等方式解决CORS问题
 draft: false
 hideEditPost: true
