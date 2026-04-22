@@ -64,3 +64,20 @@ grant all privileges on databasename.tablename to 'newusername'@'localhost';
 flush privileges;
 exit;
 ```
+
+## 停止运行
+
+```bash
+sudo systemctl stop mysql
+```
+
+停止开机自启
+```bash
+sudo systemctl disable mysql
+```
+
+启动命令
+```bash
+sudo systemctl enable mysql
+sudo systemctl start mysql
+```
