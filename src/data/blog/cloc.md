@@ -30,4 +30,6 @@ cloc . --exclude-dir=node_modules,dist
 cloc . --include-lang=Python,Java
 cloc . --by-file
 cloc . --out=result.txt
+cloc . --exclude-ext=log,lock
+cloc . --not-match-f="config\.js"  # 正则表达式
 ```
