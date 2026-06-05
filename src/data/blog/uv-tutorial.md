@@ -150,3 +150,24 @@ cmd
 ```
 set UV_INDEX_URL=https://pypi.tuna.tsinghua.edu.cn/simple
 ```
+
+### cuda版torch换源
+
+使用交大源
+
+```
+[[tool.uv.index]]
+name = "tsinghua"
+url = "https://pypi.tuna.tsinghua.edu.cn/simple"
+default = true
+
+[[tool.uv.index]]
+name = "pytorch-cn"
+url = "https://mirror.sjtu.edu.cn/pytorch-wheels/cu130"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cn" }
+torchvision = { index = "pytorch-cn" }
+torchaudio = { index = "pytorch-cn" }
+```
