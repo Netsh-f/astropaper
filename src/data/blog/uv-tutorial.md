@@ -163,7 +163,7 @@ default = true
 
 [[tool.uv.index]]
 name = "pytorch-cn"
-url = "https://mirror.sjtu.edu.cn/pytorch-wheels/cu130"
+url = "https://mirrors.nju.edu.cn/pytorch/whl/cu121"
 explicit = true
 
 [tool.uv.sources]
